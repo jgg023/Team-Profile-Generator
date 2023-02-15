@@ -1,5 +1,5 @@
 const inquirer = require ("inquirer")
-const Manager  = require ("./lib/Manager") 
+Engineer  = require ("Engineer") 
 const intern = require ("./lib/Intern")
 const Engineer = require ("./lib/Engineer")
 let team = [
@@ -32,7 +32,7 @@ function start (){
     )
     .then (function(data){
         console.log (data)
-        let mgr = new Manager(
+        let mgr Engineer(
          data.Managername,data.Managerid,data.Manageremail,data.Managerofficenumber
         );
         team.push(
@@ -99,6 +99,12 @@ function addEngineer(){
     ]) .then (
         function (data){
             console.log (data)
+            let engr = new Engineer(
+                data.Engineername,data.Engineerid,data.Engineeremail,data.Engineergithub
+               );
+               team.push(
+                   engr
+               );
         }
     )
 
