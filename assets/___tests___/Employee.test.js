@@ -6,7 +6,7 @@ test("Can create Employee object", () => {
 
   test("getRole() must return \"Employee\"", () => {
     const expectedValue = "Employee";
-    const emp = new Employee("Alice", 1, "test@test.com");
+    const emp = new Employee("Julian", 1, "Julian@gmail.com");
     expect(emp.getRole()).toBe(expectedValue);
   });
 
