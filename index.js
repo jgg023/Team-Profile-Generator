@@ -160,6 +160,7 @@ function addIntern (){
     })
 }
 function buildTeam(){
+    console.log("team = ",team);
     if (!fs.existsSync(OUT_DIR)) {
         fs.mkdirSync(OUT_DIR);
       }
