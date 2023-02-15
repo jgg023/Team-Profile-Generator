@@ -106,6 +106,7 @@ function addEngineer(){
                team.push(
                    engr
                );
+               menu();
         }
     )
 
@@ -149,6 +150,7 @@ function addIntern (){
            team.push(
                intr
            );
+           menu();
     })
 }
 start ()
