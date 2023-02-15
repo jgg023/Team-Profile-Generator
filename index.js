@@ -1,8 +1,12 @@
-const inquirer = require ("inquirer")
-Engineer  = require ("Engineer") 
-const intern = require ("./lib/Intern")
+const inquirer = require ("inquirer") 
+const Intern = require ("./lib/Intern")
 const Engineer = require ("./lib/Engineer");
 const Manager = require("./lib/Manager");
+const path = require('path');
+const fs = require('fs');
+const OUT_DIR = path.resolve(__dirname, 'dist');
+const outPath = path.join(OUT_DIR, 'team.html');
+
 let team = [
 
 ];
@@ -65,6 +69,7 @@ function menu (){
             )
         }
         else if (data === "Exit"){
+            buildTeam();
             process.exit()
         }
 
@@ -152,5 +157,8 @@ function addIntern (){
            );
            menu();
     })
+}
+function buildTeam(){
+
 }
 start ()
