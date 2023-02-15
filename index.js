@@ -56,12 +56,12 @@ function menu (){
         
     }) .then (function(data){
         console.log (data)
-        if (data==="Engineer"){
+        if (data.Options==="Engineer"){
             //function = "Engineer"
             addEngineer(
 
             )
-        } else if ( data === "Intern" 
+        } else if ( data.Options === "Intern" 
 
         ){
             //function = "Intern"
@@ -69,7 +69,7 @@ function menu (){
 
             )
         }
-        else if (data === "Exit"){
+        else if (data.Options === "Exit"){
             buildTeam();
             process.exit()
         }
