@@ -6,6 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const OUT_DIR = path.resolve(__dirname, 'dist');
 const outPath = path.join(OUT_DIR, 'team.html');
+const generateHTML = require("./src/generateHTML");
 
 let team = [
 
@@ -159,6 +160,9 @@ function addIntern (){
     })
 }
 function buildTeam(){
-
+    if (!fs.existsSync(OUT_DIR)) {
+        fs.mkdirSync(OUT_DIR);
+      }
+      fs.writeFileSync(outPath, generateHTML(team), 'utf-8');
 }
 start ()
