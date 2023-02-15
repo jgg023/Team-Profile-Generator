@@ -2,7 +2,9 @@ const inquirer = require ("inquirer")
 const Manager  = require ("./lib/Manager") 
 const intern = require ("./lib/Intern")
 const Engineer = require ("./lib/Engineer")
+let team = [
 
+];
 function start (){
     inquirer.prompt(
         [
@@ -30,6 +32,12 @@ function start (){
     )
     .then (function(data){
         console.log (data)
+        let mgr = new Manager(
+         data.Managername,data.Managerid,data.Manageremail,data.Managerofficenumber
+        );
+        team.push(
+            mgr
+        );
         menu ()
     })
 } 
@@ -37,7 +45,7 @@ function menu (){
     inquirer.prompt({
         type: 'list',
         name: 'Options',
-        message: 'What would you like to do next?',
+        message: 'Which team member you want to add?',
         choices : ["Engineer","Intern","Exit"]  
         
     }) .then (function(data){
@@ -52,7 +60,7 @@ function menu (){
         ){
             //function = "Intern"
             addIntern(
-                
+
             )
         }
         else if (data === "Exit"){
